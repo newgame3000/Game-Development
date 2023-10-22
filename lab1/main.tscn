@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://ch5xawsxrd4hm"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_wi1ww"]
+[ext_resource type="Texture2D" uid="uid://bumobag8j6d3p" path="res://images/billiard.jpg" id="2_5v27b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwm02"]
+size = Vector2(10, 10.0069)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxkby"]
+size = Vector2(1920, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qx8x7"]
+size = Vector2(4, 1080.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sy3uw"]
+size = Vector2(1920, 3)
+
+[node name="Main" type="Node"]
+script = ExtResource("1_wi1ww")
+
+[node name="Left wall" type="StaticBody2D" parent="."]
+position = Vector2(2, 540.375)
+scale = Vector2(4, 1080.75)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left wall"]
+position = Vector2(-1, 0.000346899)
+scale = Vector2(0.1, 0.1)
+shape = SubResource("RectangleShape2D_cwm02")
+
+[node name="Down wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Down wall"]
+position = Vector2(960, 1082)
+shape = SubResource("RectangleShape2D_dxkby")
+
+[node name="Right wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right wall"]
+position = Vector2(1922, 540.25)
+shape = SubResource("RectangleShape2D_qx8x7")
+
+[node name="Up wall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Up wall"]
+position = Vector2(960, -1.5)
+shape = SubResource("RectangleShape2D_sy3uw")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 0
+texture = ExtResource("2_5v27b")
+expand_mode = 1
