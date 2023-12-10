@@ -1,0 +1,189 @@
+[gd_scene load_steps=27 format=3 uid="uid://c6j085maenk4g"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_xxnl4"]
+[ext_resource type="Texture2D" uid="uid://btckbaos3no1d" path="res://images/photo_studio_loft_hall_8k.hdr" id="2_bjn5j"]
+[ext_resource type="AudioStream" uid="uid://dtarho7vr4533" path="res://audio/01 - Johann Sebastian Bach - Suite Nr. 2 in B-moll, BWV 1067 - Badinerie.mp3" id="3_a3sch"]
+[ext_resource type="AudioStream" uid="uid://ctr22q1e6m0et" path="res://audio/05 - Chopin - Walzer, Op.64 - 2.mp3" id="4_qw2m0"]
+[ext_resource type="AudioStream" uid="uid://0vplf6uch2lf" path="res://audio/17 - Tchaikowsky - Walzer aus Dornröschen.mp3" id="5_eoepa"]
+[ext_resource type="AudioStream" uid="uid://b6uj8x7bqiyf1" path="res://audio/19 - Ludwig van Beethoven - Bagatelle in A - moll '' Für Elise'' WoO 59.mp3" id="6_4ccsk"]
+[ext_resource type="AudioStream" uid="uid://1sb1tt0w8dqt" path="res://audio/20 - Ludwig van Beethoven - Klaviersonate Nr. 14, Op. 27 Nr. 2 -Mondschein- - Adagio Sostenuto.mp3" id="7_mtsih"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hsr2y"]
+albedo_color = Color(0, 0.631373, 0.858824, 1)
+metallic = 0.5
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_llqjc"]
+material = SubResource("StandardMaterial3D_hsr2y")
+size = Vector2(50, 50)
+center_offset = Vector3(0, -25, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ryehe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uwrr6"]
+albedo_color = Color(0, 0.713726, 0.870588, 0.447059)
+metallic = 0.5
+roughness = 0.01
+refraction_enabled = true
+refraction_scale = 0.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ywjks"]
+lightmap_size_hint = Vector2i(252, 252)
+material = SubResource("StandardMaterial3D_uwrr6")
+size = Vector2(50, 50)
+center_offset = Vector3(25, 0, 0)
+orientation = 0
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_tlw2r"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yl4oe"]
+material = SubResource("StandardMaterial3D_uwrr6")
+flip_faces = true
+size = Vector2(50, 50)
+center_offset = Vector3(-25, 0, 0)
+orientation = 0
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_mev0a"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yaw1i"]
+material = SubResource("StandardMaterial3D_uwrr6")
+size = Vector2(50, 50)
+center_offset = Vector3(0, 0, 25)
+orientation = 2
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_unmiv"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wkpw6"]
+material = SubResource("StandardMaterial3D_uwrr6")
+flip_faces = true
+size = Vector2(50, 50)
+center_offset = Vector3(0, 0, -25)
+orientation = 2
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_euuaj"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kgiya"]
+material = SubResource("StandardMaterial3D_uwrr6")
+size = Vector2(50, 50)
+center_offset = Vector3(0, 25, 0)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_8mnyw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sxdva"]
+size = Vector3(50, 50, 50)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_ysu02"]
+panorama = ExtResource("2_bjn5j")
+
+[sub_resource type="Sky" id="Sky_ridub"]
+sky_material = SubResource("PanoramaSkyMaterial_ysu02")
+process_mode = 1
+
+[sub_resource type="Environment" id="Environment_buktq"]
+background_mode = 2
+background_energy_multiplier = 0.5
+sky = SubResource("Sky_ridub")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wakq1"]
+streams_count = 5
+random_pitch = 1.0
+random_volume_offset_db = 0.0
+stream_0/stream = ExtResource("3_a3sch")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("4_qw2m0")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("5_eoepa")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("6_4ccsk")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("7_mtsih")
+stream_4/weight = 1.0
+
+[node name="Main" type="Node"]
+script = ExtResource("1_xxnl4")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 45)
+
+[node name="Floor" type="StaticBody3D" parent="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Floor"]
+mesh = SubResource("PlaneMesh_llqjc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -25, 0)
+shape = SubResource("WorldBoundaryShape3D_ryehe")
+
+[node name="Right" type="StaticBody3D" parent="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Right"]
+mesh = SubResource("PlaneMesh_ywjks")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Right"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 25, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_tlw2r")
+
+[node name="Left" type="StaticBody3D" parent="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Left"]
+mesh = SubResource("PlaneMesh_yl4oe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Left"]
+transform = Transform3D(1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0, 0, 1, -25, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_mev0a")
+
+[node name="Front" type="StaticBody3D" parent="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Front"]
+mesh = SubResource("PlaneMesh_yaw1i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Front"]
+transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0, 25)
+shape = SubResource("WorldBoundaryShape3D_unmiv")
+
+[node name="Back" type="StaticBody3D" parent="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Back"]
+mesh = SubResource("PlaneMesh_wkpw6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Back"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -25)
+shape = SubResource("WorldBoundaryShape3D_euuaj")
+
+[node name="Up" type="StaticBody3D" parent="Node3D"]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D/Up"]
+mesh = SubResource("PlaneMesh_kgiya")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Up"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 25, 0)
+shape = SubResource("WorldBoundaryShape3D_8mnyw")
+
+[node name="For lines" type="StaticBody3D" parent="Node3D"]
+collision_layer = 4
+collision_mask = 4
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/For lines"]
+shape = SubResource("BoxShape3D_sxdva")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_buktq")
+
+[node name="TextureRect" type="TextureRect" parent="WorldEnvironment"]
+offset_right = 1063.0
+offset_bottom = 645.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 50, 0)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
+[node name="Balls" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_wakq1")
+autoplay = true

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2y4gvma7b12k"]
+
+[ext_resource type="Script" path="res://ball.gd" id="1_6on60"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cmem8"]
+resource_local_to_scene = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_vlfrh"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_cmem8")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tt7p4"]
+resource_local_to_scene = true
+
+[node name="Ball" type="Node3D"]
+script = ExtResource("1_6on60")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("SphereMesh_vlfrh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_tt7p4")
+
+[connection signal="mouse_entered" from="RigidBody3D" to="." method="_on_rigid_body_3d_mouse_entered"]
+[connection signal="mouse_exited" from="RigidBody3D" to="." method="_on_rigid_body_3d_mouse_exited"]

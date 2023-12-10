@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkq2c4y2ugh1"]
+
+[ext_resource type="PackedScene" uid="uid://qomywewg66w5" path="res://buran/buran.gltf" id="1_unoew"]
+
+[node name="buran" instance=ExtResource("1_unoew")]
+
+[node name="Buran" parent="Sketchfab_model/02e3c95325da4841b006b3581b2b62ff_fbx/RootNode" index="0"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)

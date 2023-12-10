@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://1sb1tt0w8dqt"
+path="res://.godot/imported/20 - Ludwig van Beethoven - Klaviersonate Nr. 14, Op. 27 Nr. 2 -Mondschein- - Adagio Sostenuto.mp3-740c28680688e6cdc025766c93124f74.mp3str"
+
+[deps]
+
+source_file="res://audio/20 - Ludwig van Beethoven - Klaviersonate Nr. 14, Op. 27 Nr. 2 -Mondschein- - Adagio Sostenuto.mp3"
+dest_files=["res://.godot/imported/20 - Ludwig van Beethoven - Klaviersonate Nr. 14, Op. 27 Nr. 2 -Mondschein- - Adagio Sostenuto.mp3-740c28680688e6cdc025766c93124f74.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
