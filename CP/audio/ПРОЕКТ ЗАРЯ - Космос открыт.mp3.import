@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bugblcd42yrho"
+path="res://.godot/imported/ПРОЕКТ ЗАРЯ - Космос открыт.mp3-caf0161e223e533d18ff4d642f3d5b42.mp3str"
+
+[deps]
+
+source_file="res://audio/ПРОЕКТ ЗАРЯ - Космос открыт.mp3"
+dest_files=["res://.godot/imported/ПРОЕКТ ЗАРЯ - Космос открыт.mp3-caf0161e223e533d18ff4d642f3d5b42.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

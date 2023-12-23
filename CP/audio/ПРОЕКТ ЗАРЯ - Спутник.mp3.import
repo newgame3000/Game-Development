@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfpvuccmujosu"
+path="res://.godot/imported/ПРОЕКТ ЗАРЯ - Спутник.mp3-a820e63acecf96d1920d583800786ea8.mp3str"
+
+[deps]
+
+source_file="res://audio/ПРОЕКТ ЗАРЯ - Спутник.mp3"
+dest_files=["res://.godot/imported/ПРОЕКТ ЗАРЯ - Спутник.mp3-a820e63acecf96d1920d583800786ea8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

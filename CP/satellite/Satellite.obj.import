@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b5uvxp0mcehko"
+path="res://.godot/imported/Satellite.obj-bf4e4df3fb3f8a7338e9b6808a2f102c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Satellite.obj-bf4e4df3fb3f8a7338e9b6808a2f102c.mesh"]
+
+source_file="res://satellite/Satellite.obj"
+dest_files=["res://.godot/imported/Satellite.obj-bf4e4df3fb3f8a7338e9b6808a2f102c.mesh", "res://.godot/imported/Satellite.obj-bf4e4df3fb3f8a7338e9b6808a2f102c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

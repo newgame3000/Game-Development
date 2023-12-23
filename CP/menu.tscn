@@ -1,0 +1,149 @@
+[gd_scene load_steps=7 format=3 uid="uid://gdk4k568x8tq"]
+
+[ext_resource type="Texture2D" uid="uid://b7ehcr42fft1r" path="res://menu/menu.jpg" id="1_d1wg5"]
+[ext_resource type="Script" path="res://menu/menu.gd" id="1_hs6ki"]
+[ext_resource type="AudioStream" uid="uid://cemh3xpifm8ln" path="res://audio/Зенит - Буран.mp3" id="3_28c8f"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_u4v6f"]
+streams_count = 1
+random_pitch = 1.0
+random_volume_offset_db = 0.0
+stream_0/stream = ExtResource("3_28c8f")
+stream_0/weight = 1.0
+
+[sub_resource type="FontFile" id="FontFile_b3i24"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/110/0 = Vector2(0, 0)
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/110/0 = Vector2(0, 0)
+cache/0/60/0/ascent = 0.0
+cache/0/60/0/descent = 0.0
+cache/0/60/0/underline_position = 0.0
+cache/0/60/0/underline_thickness = 0.0
+cache/0/60/0/scale = 1.0
+cache/0/60/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/60/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/60/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/60/0/kerning_overrides/110/0 = Vector2(0, 0)
+cache/0/110/0/ascent = 0.0
+cache/0/110/0/descent = 0.0
+cache/0/110/0/underline_position = 0.0
+cache/0/110/0/underline_thickness = 0.0
+cache/0/110/0/scale = 1.0
+cache/0/110/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/110/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/110/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/110/0/kerning_overrides/110/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5vfq3"]
+font = SubResource("FontFile_b3i24")
+font_size = 110
+font_color = Color(1, 0, 0, 1)
+outline_size = 20
+
+[node name="Menu" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+light_mask = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(36.0003, 20.25)
+texture = ExtResource("1_d1wg5")
+expand_mode = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hs6ki")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+offset_left = 689.5
+offset_top = 372.0
+offset_right = 750.5
+offset_bottom = 438.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.978362, 1)
+
+[node name="Start" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Старт"
+
+[node name="Exit" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Выход"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+stream = SubResource("AudioStreamRandomizer_u4v6f")
+
+[node name="Mode" type="VBoxContainer" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Easy" type="Button" parent="Control/Mode"]
+layout_mode = 2
+text = "Легко"
+
+[node name="Norm" type="Button" parent="Control/Mode"]
+layout_mode = 2
+text = "Средне"
+
+[node name="Hard" type="Button" parent="Control/Mode"]
+layout_mode = 2
+text = "Сложно"
+
+[node name="Real" type="Button" parent="Control/Mode"]
+layout_mode = 2
+text = "Реалистично"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "Буран"
+label_settings = SubResource("LabelSettings_5vfq3")
+
+[connection signal="pressed" from="Control/VBoxContainer/Start" to="Control" method="_on_start_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Exit" to="Control" method="_on_exit_pressed"]
+[connection signal="pressed" from="Control/Mode/Easy" to="Control" method="_on_easy_pressed"]
+[connection signal="pressed" from="Control/Mode/Norm" to="Control" method="_on_norm_pressed"]
+[connection signal="pressed" from="Control/Mode/Hard" to="Control" method="_on_hard_pressed"]
+[connection signal="pressed" from="Control/Mode/Real" to="Control" method="_on_real_pressed"]

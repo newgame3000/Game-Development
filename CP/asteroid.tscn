@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://3ry8rd3is52h"]
+
+[ext_resource type="ArrayMesh" uid="uid://um7sfmjy5pe0" path="res://asteroid/Asteroid_1_LOW_MODEL_.obj" id="1_8k2hu"]
+[ext_resource type="Texture2D" uid="uid://ebbcqid18cle" path="res://asteroid/ASTEROID_LOW_POLY_1_COLOR_.png" id="2_c6xml"]
+[ext_resource type="Texture2D" uid="uid://bg6ya85keqsxi" path="res://asteroid/ASTEROID_LOW_POLY_1_NM_.png" id="3_6cu7b"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qu5u6"]
+albedo_texture = ExtResource("2_c6xml")
+normal_enabled = true
+normal_texture = ExtResource("3_6cu7b")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fu8ae"]
+radius = 1.0
+height = 3.338
+
+[node name="RigidBody3D" type="StaticBody3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_8k2hu")
+surface_material_override/0 = SubResource("StandardMaterial3D_qu5u6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_fu8ae")

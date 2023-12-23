@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cscj6gx10jr35"
+path="res://.godot/imported/Geoffplaysguitar, Алла Пугачева, Atomic Heart - Arlekino (Geoffrey Day Remix).mp3-7d4d64af3f860a16045d6c0138ed266d.mp3str"
+
+[deps]
+
+source_file="res://audio/Geoffplaysguitar, Алла Пугачева, Atomic Heart - Arlekino (Geoffrey Day Remix).mp3"
+dest_files=["res://.godot/imported/Geoffplaysguitar, Алла Пугачева, Atomic Heart - Arlekino (Geoffrey Day Remix).mp3-7d4d64af3f860a16045d6c0138ed266d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

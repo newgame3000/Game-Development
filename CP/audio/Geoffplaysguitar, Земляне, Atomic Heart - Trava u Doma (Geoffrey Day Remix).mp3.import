@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://5buvjyttoo2k"
+path="res://.godot/imported/Geoffplaysguitar, Земляне, Atomic Heart - Trava u Doma (Geoffrey Day Remix).mp3-d54dda98b05f006143f52ff8894eaf1a.mp3str"
+
+[deps]
+
+source_file="res://audio/Geoffplaysguitar, Земляне, Atomic Heart - Trava u Doma (Geoffrey Day Remix).mp3"
+dest_files=["res://.godot/imported/Geoffplaysguitar, Земляне, Atomic Heart - Trava u Doma (Geoffrey Day Remix).mp3-d54dda98b05f006143f52ff8894eaf1a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d16utdd2506nc"
+path="res://.godot/imported/DVRST, Игорь Скляр, Atomic Heart - Komarovo (DVRST Phonk Remix).mp3-4aa37d23ad02d6a33f1be3963523fcdb.mp3str"
+
+[deps]
+
+source_file="res://audio/DVRST, Игорь Скляр, Atomic Heart - Komarovo (DVRST Phonk Remix).mp3"
+dest_files=["res://.godot/imported/DVRST, Игорь Скляр, Atomic Heart - Komarovo (DVRST Phonk Remix).mp3-4aa37d23ad02d6a33f1be3963523fcdb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
